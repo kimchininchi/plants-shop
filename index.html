@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтернет магазин рослин</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://content2.rozetka.com.ua/goods/images/big/357728312.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+
+        <div class="left">
+            <nav>
+                <div class="menu-item">
+                    <a href="#" onclick="showAllMice()">Меню</a>
+                    <div class="submenu">
+                        <a href="#" onclick="filterMice('leafy-plants')">сукуленти</a>
+                        <a href="#" onclick="filterMice('moss')">рослина</a>
+                        <a href="#" onclick="filterMice('succulent')">рослина</a>
+                    </div>
+                </div>
+                <a href="pronas.html">Про нас</a>
+                <a href="propozuzii.html">Спеціальні пропозиції</a>
+            </nav>
+        </div>
+
+        <div class="logo">
+            <img src="images/logo.png">
+        </div>
+
+        <div class="contact-info">
+            <p>Телефон: (044) 123-45-67</p>
+            <p>Email: info@plantshop.com.ua</p>
+            <p>Адреса: Київ, вул. Хрещатик, 1</p>
+            <div class="social-links">
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"
+                        alt="Facebook"></a>
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/800px-Instagram_icon.png"
+                        alt="Instagram"></a>
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/1245px-Logo_of_Twitter.svg.png"
+                        alt="Twitter"></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="shopping_cart">
+            <div class="shopping">
+                <img src="images/shopping.png">
+                <span class="quantity">0</span>
+            </div>
+        </div>
+        <div class="list">
+        </div>
+        <div class="cards">
+            <h1>Товари у кошику</h1>
+            <ul class="listCard"></ul>
+            <div class="checkOut">
+                <div class="total">0</div>
+                <div class="closeShopping">Закрити</div>
+            </div>
+        </div>
+        <h1>Рослини</h1>
+        <div class="cards-container">
+            <div class="card leafy-plants" onclick="openModal('modal1')">
+                <img src="images/11.jpg" alt="бонсай">
+                <h2>Бонсай</h2>
+                <p class="p1">є в наявності</p>
+                <p>250 грн</p>
+                <div class="product-details">
+                    <p>назва:Бонсай</p>
+                    <p>Колір: зелений</p>
+                    <p>Вік: 5 місяців</p>
+                    <button onclick="addToCard(0)">Додати в кошик</button>
+                </div>
+                <button onclick="addToCard(0)">Додати в кошик</button>
+            </div>
+            <div class="card leafy-plants" onclick="openModal('modal2')">
+                <img src="images/3.webp" alt="орхідея біла">
+                <h2>Орхідея</h2>
+                <p class="p1">є в наявності</p>
+                <p>150 грн</p>
+                <div class="product-details">
+                    <p>назва:Бонсай</p>
+                    <p>Колір: зелений</p>
+                    <p>Вік: 5 місяців</p>
+                    <button onclick="addToCard(1)">Додати в кошик</button>
+                </div>
+                <button onclick="addToCard(1)">Додати в кошик</button>
+            </div>
+
+            <div class="card  leafy-plants" onclick="openModal('modal3')">
+                <img src="images/22.jpg" alt="бамбук" width="300">
+                <h2>Бамбук</h2>
+                <p class="p">нема в наявності</p>
+                <p>300 грн</p>
+                <div class="product-details">
+                    <p>назва:Бонсай</p>
+                    <p>Колір: зелений</p>
+                    <p>Вік: 5 місяців</p>
+                    <button onclick="addToCard(2)">Додати в кошик</button>
+                </div>
+                <button onclick="addToCard(2)">Додати в кошик</button>
+            </div>
+            <div class="card leafy-plants" onclick="openModal('modal4')">
+                <img src="https://plod.net.ua/upload/iblock/2f8/2f8df2a3ab07cda5e5cfa3e685a22b38.jpg" alt="бонсай">
+                <h2>Магнолія 'Judi'</h2>
+                <p class="p1">є в наявності</p>
+                <p>250 грн</p>
+            </div>
+            <div class="card leafy-plants" onclick="openModal('modal5')">
+                <img src="https://eco-kraina.com/wp-content/uploads/2021/11/rlr-300x300.jpg?v=1638106407" alt="бонсай">
+                <h2>Мигдаль декоративний</h2>
+                <p class="p1">є в наявності</p>
+                <p>2250 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://www.archi-flora.com/wp-content/uploads/2021/01/Nymphaea-Black-Princess.jpg"
+                    alt="бонсай">
+                <h2>Німфея “Black Princess”</h2>
+                <p class="p1">є в наявності</p>
+                <p>1650 грн</p>
+            </div>
+            <div class="card moss">
+                <img src="https://cdn.asterias.od.ua/images/144/144-10-26-700x688.jpg" alt="бонсай">
+                <h2>Корділіна</h2>
+                <p class="p1">є в наявності</p>
+                <p>250 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://florium.ua/media/catalog/product/cache/1/file/9df78eab33525d08d6e5fb8d27136e95/a/s/asplenium-angustatum.jpg"
+                    alt="бонсай">
+                <h2>Аспленіум</h2>
+                <p class="p1">є в наявності</p>
+                <p>250 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://cdn.asterias.od.ua/images/89/89-7-24-700x645.jpg" alt="бонсай">
+                <h2>Маранта</h2>
+                <p class="p1">є в наявності</p>
+                <p>250 грн</p>
+            </div>
+            <div class="card moss">
+                <img src="images/мох.webp" alt="мох">
+                <h2>Мох декоративний</h2>
+                <p class="p1">є в наявності</p>
+                <p>500 грн</p>
+            </div>
+            <div class="card  leafy-plants">
+                <img src="images/папороть.jpg" alt="папороть кімнатна">
+                <h2>Папороть кімнатна</h2>
+                <p class="p1">є в наявності</p>
+                <p>100 грн</p>
+            </div>
+            <div class="card succulent">
+                <img src="images/Анакампсерос" alt="сукулент">
+                <h2>Анакампсерос</h2>
+                <p class="p1">є в наявності</p>
+                <p>100 грн</p>
+            </div>
+            <div class="card succulent">
+                <img src="images/ялинка.webp" alt="ялинка">
+                <h2>Ялинка домашня</h2>
+                <p class="p1">є в наявності</p>
+                <p>1406 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="images/авокадо.jpg" alt="авокадо">
+                <h2>Авокадо</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="images/каланхоє.jpg" alt="каланхоє">
+                <h2>Каланхоє</h2>
+                <p class="p1">є в наявності</p>
+                <p>400 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://ukraflora.ua/image/cache/catalog/image/cache/catalog/content/gorschechka/fikusi/fikus_benjamina_na_pletenom_stvole-1100x1100.webp"
+                    alt="каланхоє">
+                <h2>Фікус Бенджаміна</h2>
+                <p class="p1">є в наявності</p>
+                <p>400 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR_d4lkZy5v-OtiJigWXgb7BKAWkIMnTuCBSSfPQx7mA&s"
+                    alt="каланхоє">
+                <h2>Сенеціо</h2>
+                <p class="p1">є в наявності</p>
+                <p>400 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://cdn.asterias.od.ua/images/136/136-11-30-700x579.jpg" alt="каланхоє">
+                <h2>Гавортія</h2>
+                <p class="p1">є в наявності</p>
+                <p>400 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://omela-ua.com/uploads/product/59400/59431/klever-komplektovanyi-semena_2022-01-21_13-35-35.jpg"
+                    alt="каланхоє">
+                <h2>Конюшина</h2>
+                <p class="p1">є в наявності</p>
+                <p>600 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://sadubykovunu.com.ua/image/cache/catalog/image/cache/catalog/tovar/mshanka-shilovidnaya-600x600.webp"
+                    alt="каланхоє">
+                <h2>Ірландський мох</h2>
+                <p class="p1">є в наявності</p>
+                <p>5600 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://posadka.com.ua/upload/resize_cache/iblock/8fc/640_640_131903e01863149be97e251a4ed38558f/qa3mkomr8adkwln2od04h6rn0gots47y.jpg"
+                    alt="каланхоє">
+                <h2>Плющ</h2>
+                <p class="p1">немає в наявності</p>
+                <p>150 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://florina.ua/image/cache/catalog/kategorii/komnatnye-rasteniya/dekorativno-listvennye-rasteniya/komnatnyj-limon-mejera-1-414x414.jpg"
+                    alt="каланхоє">
+                <h2>Лимон кімнатний</h2>
+                <p class="p1">є в наявності</p>
+                <p>1700 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://images.prom.ua/2687571979_w640_h640_palma-hamedoreya-komnatnoe.jpg" alt="пальма">
+                <h2>Пальма Хамедорея</h2>
+                <p class="p1">є в наявності</p>
+                <p>500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://cdn.asterias.od.ua/images/38/38-1-56-700x559.jpg" alt="венерина мухоловка">
+                <h2>Венерина Мухоловка</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://agro-market.net/upload/resize_cache/iblock/037/345_483_1/sb4svjkio51awd3uqu9w7g2qddycasni.jpeg"
+                    alt="венерина мухоловка">
+                <h2>Драцена</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://www.sb.by/upload/iblock/818/818daaf4b23ec1b1c0710a3d05a0471c.jpg"
+                    alt="венерина мухоловка">
+                <h2>Пассифлора</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://florium.ua/media/catalog/product/cache/1/file/9df78eab33525d08d6e5fb8d27136e95/n/e/nepentes.jpg"
+                    alt="венерина мухоловка">
+                <h2>Непентес</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://images.prom.ua/3575718813_w640_h640_rosyanka-miks-semena.jpg"
+                    alt="венерина мухоловка">
+                <h2>Росичка</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://rastenievod.com/wp-content/uploads/2017/03/1-37-700x633.jpg" alt="венерина мухоловка">
+                <h2>Джункус</h2>
+                <p class="p1">є в наявності</p>
+                <p>2500 грн</p>
+            </div>
+            <div class="card leafy-plants">
+                <img src="https://kvity.org.ua/wp-content/uploads/ewx_11340.jpg" alt="венерина мухоловка">
+                <h2>Евкаліпт кімнатний</h2>
+                <p class="p1">є в наявності</p>
+                <p>500 грн</p>
+            </div>
+
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-flex">
+                    <img class="modal-img" src="images/11.jpg" alt="бонсай">
+                    <div class="modal-info">
+                        <h2>Кімнатна рослина</h2>
+                        <p><strong>Опис:</strong>Молода рослинка буде радувати Вас своєю красою та додаватиме свіжого
+                            повітря у вашій кімнаті</p>
+                        <p><strong>Характеристики:</strong></p>
+                        <ul>
+                            <li>карликове дерево</li>
+                            <li>зелене</li>
+                            <li>не квітуче</li>
+                        </ul>
+                        <p><strong>Інформація про доставку:</strong>доставка швидка та не дорога</p>
+                        <button onclick="addToCard(0)">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <div class="modal-flex">
+                    <img class="modal-img" src="images/3.webp" alt="орхідея">
+                    <div class="modal-info">
+                        <h2>Кімнатна рослина</h2>
+                        <p><strong>Опис:</strong>Молода рослинка буде радувати Вас своєю красою та додаватиме свіжого
+                            повітря у вашій кімнаті</p>
+                        <p><strong>Характеристики:</strong></p>
+                        <ul>
+                            <li>карликове дерево</li>
+                            <li>зелене</li>
+                            <li>не квітуче</li>
+                        </ul>
+                        <p><strong>Інформація про доставку:</strong>доставка швидка та не дорога</p>
+                        <button onclick="addToCard(1)">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <div class="modal-flex">
+                    <img class="modal-img" src="images/22.jpg" alt="бамбук">
+                    <div class="modal-info">
+                        <h2>Кімнатна рослина</h2>
+                        <p><strong>Опис:</strong>Молода рослинка буде радувати Вас своєю красою та додаватиме свіжого
+                            повітря у вашій кімнаті</p>
+                        <p><strong>Характеристики:</strong></p>
+                        <ul>
+                            <li>карликове дерево</li>
+                            <li>зелене</li>
+                            <li>не квітуче</li>
+                        </ul>
+                        <p><strong>Інформація про доставку:</strong>доставка швидка та не дорога</p>
+                        <button onclick="addToCard(2)">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <div class="modal-flex">
+                    <img class="modal-img"
+                        src="https://plod.net.ua/upload/iblock/2f8/2f8df2a3ab07cda5e5cfa3e685a22b38.jpg" alt="бамбук">
+                    <div class="modal-info">
+                        <h2>Кімнатна рослина</h2>
+                        <p><strong>Опис:</strong>Молода рослинка буде радувати Вас своєю красою та додаватиме свіжого
+                            повітря у вашій кімнаті</p>
+                        <p><strong>Характеристики:</strong></p>
+                        <ul>
+                            <li>карликове дерево</li>
+                            <li>зелене</li>
+                            <li>не квітуче</li>
+                        </ul>
+                        <p><strong>Інформація про доставку:</strong>доставка швидка та не дорога</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal5')">&times;</span>
+                <div class="modal-flex">
+                    <img class="modal-img"
+                        src="https://eco-kraina.com/wp-content/uploads/2021/11/rlr-300x300.jpg?v=1638106407p"
+                        alt="орхідея">
+                    <div class="modal-info">
+                        <h2>Кімнатна рослина</h2>
+                        <p><strong>Опис:</strong>Молода рослинка буде радувати Вас своєю красою та додаватиме свіжого
+                            повітря у вашій кімнаті</p>
+                        <p><strong>Характеристики:</strong></p>
+                        <ul>
+                            <li>карликове дерево</li>
+                            <li>зелене</li>
+                            <li>не квітуче</li>
+                        </ul>
+                        <p><strong>Інформація про доставку:</strong>доставка швидка та не дорога</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>Телефон: (044) 123-45-67</p>
+                    <p>Email: info@plantshop.com.ua</p>
+                    <p>Адреса: Київ, вул. Хрещатик, 1</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Інформація</h3>
+                    <ul>
+                        <li><a href="#">Доставка і оплата</a></li>
+                        <li><a href="#">Гарантія і повернення</a></li>
+                        <li><a href="#">Політика конфіденційності</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Спеціальні мережі</h3>
+                    <a href="#"><img src="images/1.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/2.jfif" alt="Instagram"></a>
+                    <a href="#"><img src="images/3.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
